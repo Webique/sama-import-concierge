@@ -67,7 +67,7 @@ export function Footer() {
               <img src={logo} alt="Al-Sama Logo" className="h-12 w-auto" />
               <div>
                 <h3 className="font-bold text-lg">
-                  {language === 'ar' ? 'مؤسسة سما التوريد' : 'Al-Sama Import'}
+                  {language === 'ar' ? 'سما التوريد' : 'Sama Import'}
                 </h3>
                 <p className="text-sm opacity-80">
                   {language === 'ar' ? 'لخدمات السيارات' : 'Car Import Services'}

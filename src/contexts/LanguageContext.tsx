@@ -26,7 +26,7 @@ const translations = {
     heroCta: "Start Your Import Journey",
     
     // About Section
-    aboutTitle: "About Al-Sama",
+    aboutTitle: "About Sama",
     aboutContent: "We are a Saudi company specialized in brokerage and car import services from Korea and other countries. Our process covers car selection, purchase from auctions or dealers, shipment, customs clearance, and delivery directly to the client. Transparency and client trust are at the core of everything we do.",
     
     // Mission Section
@@ -62,7 +62,7 @@ const translations = {
     footerTagline: "Reliable Car Import Services from Korea & Beyond.",
     quickLinks: "Quick Links",
     contactInfo: "Contact Information",
-    copyright: "© Al-Sama Car Import Services",
+    copyright: "© Sama Import Car Services",
   },
   ar: {
     // Navigation
@@ -79,7 +79,7 @@ const translations = {
     heroCta: "ابدأ رحلة الاستيراد",
     
     // About Section
-    aboutTitle: "عن مؤسسة سما",
+    aboutTitle: "عن سما",
     aboutContent: "نحن مؤسسة سعودية متخصصة في الوساطة وخدمات استيراد السيارات من كوريا ودول أخرى. تشمل خدماتنا اختيار السيارة، الشراء من المزادات أو المعارض، متابعة الشحن والتخليص الجمركي، وتسليمها حتى باب العميل. نضع ثقة العميل وراحته في مقدمة أولوياتنا، ونعمل بأعلى مستويات الشفافية والمصداقية.",
     
     // Mission Section
@@ -115,7 +115,7 @@ const translations = {
     footerTagline: "خدمات استيراد سيارات موثوقة من كوريا ودول أخرى.",
     quickLinks: "روابط سريعة",
     contactInfo: "معلومات التواصل",
-    copyright: "© مؤسسة سما التوريد لخدمات السيارات",
+    copyright: "© سما التوريد لخدمات السيارات",
   }
 };
 
