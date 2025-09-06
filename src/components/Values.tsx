@@ -104,7 +104,7 @@ export function Values() {
             {[
               { number: '100%', label: language === 'ar' ? 'الشفافية' : 'Transparency' },
               { number: '24/7', label: language === 'ar' ? 'الدعم' : 'Support' },
-              { number: '5+', label: language === 'ar' ? 'سنوات خبرة' : 'Years Experience' },
+              { number: '3+', label: language === 'ar' ? 'سنوات خبرة' : 'Years Experience' },
               { number: '∞', label: language === 'ar' ? 'الثقة' : 'Trust' }
             ].map((stat, index) => (
               <div key={index} className="text-center">
