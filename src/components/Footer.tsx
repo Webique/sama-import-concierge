@@ -69,7 +69,7 @@ export function Footer() {
           {/* Brand Column */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3 rtl:space-x-reverse">
-              <img src={logo} alt="Al-Sama Logo" className="h-12 w-auto" />
+              <img src={logo} alt="Al-Sama Logo" className="h-36 w-auto" />
               <div>
                 <h3 className="font-bold text-lg">
                   {language === 'ar' ? 'سما التوريد' : 'Sama Import'}
