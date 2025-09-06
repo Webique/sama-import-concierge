@@ -7,6 +7,7 @@ import logo from '@/assets/logo1.webp';
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isScrolling, setIsScrolling] = useState(false);
   const { language, toggleLanguage, t } = useLanguage();
 
   const navigation = [
@@ -19,9 +20,31 @@ export function Navbar() {
   ];
 
   useEffect(() => {
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+          
+          // Show background when not at the very top
+          setScrolled(currentScrollY > 0);
+          
+          // Hide navbar when scrolling down, show when scrolling up
+          if (currentScrollY > lastScrollY && currentScrollY > 100) {
+            setIsScrolling(true);
+          } else {
+            setIsScrolling(false);
+          }
+          
+          lastScrollY = currentScrollY;
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -37,10 +60,10 @@ export function Navbar() {
   return (
     <>
       <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-        scrolled 
-          ? 'bg-background/95 backdrop-blur-xl border-b border-accent/20 shadow-2xl shadow-accent/10' 
-          : 'bg-transparent'
-      }`}>
+        isScrolling 
+          ? '-translate-y-full' 
+          : 'translate-y-0'
+      } bg-background/95 backdrop-blur-xl border-b border-accent/20 shadow-2xl shadow-accent/10`}>
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
