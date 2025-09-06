@@ -1,6 +1,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, ArrowLeft } from 'lucide-react';
+import { ArrowRight, ArrowLeft, Play } from 'lucide-react';
+import heroAutomotive from '@/assets/hero-automotive.jpg';
 
 export function Hero() {
   const { language, t } = useLanguage();
@@ -10,34 +11,66 @@ export function Hero() {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center bg-gradient-hero pt-20">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="section-heading text-5xl md:text-6xl lg:text-7xl mb-8">
-            {t('heroTitle')}
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
-            {t('heroSubtitle')}
-          </p>
-          
-          <Button
-            onClick={handleWhatsApp}
-            className="btn-hero group"
-            size="lg"
-          >
-            <span>{t('heroCta')}</span>
-            {language === 'ar' ? (
-              <ArrowLeft className="ml-2 h-5 w-5 group-hover:-translate-x-1 transition-transform" />
-            ) : (
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            )}
-          </Button>
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Hero Background Image */}
+      <div className="absolute inset-0">
+        <img 
+          src={heroAutomotive} 
+          alt="Luxury car import services"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 container mx-auto px-4 pt-20">
+        <div className="max-w-4xl">
+          <div className="space-y-8 text-white">
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight">
+              <span className="block">{t('heroTitle').split(' ').slice(0, 2).join(' ')}</span>
+              <span className="block text-accent">
+                {t('heroTitle').split(' ').slice(2).join(' ')}
+              </span>
+            </h1>
+            
+            <p className="text-xl md:text-2xl lg:text-3xl text-white/90 max-w-2xl leading-relaxed font-light">
+              {t('heroSubtitle')}
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-6 pt-8">
+              <Button
+                onClick={handleWhatsApp}
+                className="btn-hero text-lg px-12 py-6 group"
+                size="lg"
+              >
+                <span>{t('heroCta')}</span>
+                {language === 'ar' ? (
+                  <ArrowLeft className="ml-3 h-6 w-6 group-hover:-translate-x-1 transition-transform" />
+                ) : (
+                  <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
+                )}
+              </Button>
+              
+              <Button
+                variant="outline"
+                className="border-white/30 text-white hover:bg-white/10 text-lg px-8 py-6"
+                size="lg"
+              >
+                <Play className="mr-3 h-5 w-5" />
+                {language === 'ar' ? 'شاهد الفيديو' : 'Watch Video'}
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
-      
-      {/* Decorative elements */}
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent pointer-events-none" />
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/60 animate-bounce">
+        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-white/60 rounded-full mt-2 animate-pulse" />
+        </div>
+      </div>
     </section>
   );
 }
