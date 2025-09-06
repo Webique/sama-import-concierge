@@ -71,7 +71,7 @@ export function Navbar() {
               <img 
                 src={logo} 
                 alt="Al-Sama Logo" 
-                className="h-10 md:h-12 w-auto transition-all duration-300 hover:scale-105" 
+                className="h-10 w-32 md:h-12 md:w-auto transition-all duration-300 hover:scale-105" 
               />
             </div>
 
