@@ -5,7 +5,8 @@ import {
   Mail, 
   MessageCircle,
   Twitter,
-  Music2
+  Music2,
+  Instagram
 } from 'lucide-react';
 
 export function Footer() {
@@ -40,6 +41,10 @@ export function Footer() {
   ];
 
   const socialLinks = [
+    {
+      icon: Instagram,
+      href: 'https://www.instagram.com/alsmaacars0?igsh=ZXNvY2I2ZjVmNXFx&utm_source=qr'
+    },
     {
       icon: Twitter,
       href: 'https://twitter.com/alsmaacars'

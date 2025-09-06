@@ -6,7 +6,8 @@ import {
   Mail, 
   MessageCircle,
   Twitter,
-  Music2
+  Music2,
+  Instagram
 } from 'lucide-react';
 
 export function Contact() {
@@ -37,6 +38,12 @@ export function Contact() {
   ];
 
   const socialLinks = [
+    {
+      icon: Instagram,
+      name: 'Instagram',
+      href: 'https://www.instagram.com/alsmaacars0?igsh=ZXNvY2I2ZjVmNXFx&utm_source=qr',
+      color: 'text-pink-500'
+    },
     {
       icon: Twitter,
       name: 'Twitter',
