@@ -9,8 +9,6 @@ import {
   Search,
   CheckCircle
 } from 'lucide-react';
-import servicesBg from '@/assets/services-bg.jpg';
-
 export function Services() {
   const { t } = useLanguage();
 
@@ -53,17 +51,7 @@ export function Services() {
   ];
 
   return (
-    <section id="services" className="relative py-32 overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <img 
-          src={servicesBg} 
-          alt="Automotive services"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/90 to-primary/85" />
-      </div>
-
+    <section id="services" className="relative py-32 overflow-hidden bg-primary">
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4">
         <div className="max-w-6xl mx-auto">

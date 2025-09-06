@@ -9,8 +9,6 @@ import {
   Target,
   Zap
 } from 'lucide-react';
-import valuesBg from '@/assets/values-bg.jpg';
-
 export function Values() {
   const { language, t } = useLanguage();
 
@@ -53,17 +51,7 @@ export function Values() {
   ];
 
   return (
-    <section id="values" className="relative py-32 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0">
-        <img 
-          src={valuesBg} 
-          alt="Automotive showroom"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/80" />
-      </div>
-
+    <section id="values" className="relative py-32 overflow-hidden bg-gradient-to-br from-primary via-plum-gray to-primary">
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
