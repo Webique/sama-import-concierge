@@ -51,17 +51,16 @@ export function Values() {
   ];
 
   return (
-    <section id="values" className="relative py-32 overflow-hidden bg-gradient-to-br from-primary via-plum-gray to-primary">
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4">
-        <div className="max-w-7xl mx-auto">
+    <section id="values" className="py-24 bg-slate-50">
+      <div className="container mx-auto px-4">
+        <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               {t('valuesTitle')}
             </h2>
-            <div className="w-32 h-1 bg-accent mx-auto mb-8 rounded-full" />
-            <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+            <div className="w-24 h-1 bg-accent mx-auto mb-6 rounded-full" />
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
               {language === 'ar' 
                 ? 'القيم التي نؤمن بها والتي تشكل أساس عملنا وعلاقاتنا مع عملائنا'
                 : 'The values we believe in that form the foundation of our work and relationships with our clients'
@@ -69,37 +68,29 @@ export function Values() {
             </p>
           </div>
 
-          {/* Values Display */}
-          <div className="space-y-12">
+          {/* Values List */}
+          <div className="space-y-8">
             {values.map((value, index) => {
               const Icon = value.icon;
-              const isOdd = index % 2 === 1;
               
               return (
                 <div 
                   key={index}
-                  className={`flex flex-col lg:flex-row items-center gap-12 ${
-                    isOdd ? 'lg:flex-row-reverse' : ''
-                  }`}
+                  className="flex items-start gap-6 py-6 border-b border-gray-200 last:border-b-0"
                 >
-                  {/* Icon & Number */}
-                  <div className="flex-shrink-0">
-                    <div className="relative">
-                      <div className="w-32 h-32 bg-gradient-to-br from-accent/20 to-accent/10 rounded-full flex items-center justify-center backdrop-blur-sm border border-accent/30">
-                        <Icon className="h-16 w-16 text-accent" />
-                      </div>
-                      <div className="absolute -top-2 -right-2 w-12 h-12 bg-accent rounded-full flex items-center justify-center text-black font-bold text-lg">
-                        {String(index + 1).padStart(2, '0')}
-                      </div>
+                  {/* Icon */}
+                  <div className="flex-shrink-0 mt-1">
+                    <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                      <Icon className="h-6 w-6 text-accent" />
                     </div>
                   </div>
 
                   {/* Content */}
-                  <div className="flex-1 text-center lg:text-left">
-                    <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                  <div className="flex-1">
+                    <h3 className="text-xl md:text-2xl font-semibold text-gray-900 mb-3">
                       {value.title}
                     </h3>
-                    <p className="text-lg text-white/80 leading-relaxed max-w-2xl">
+                    <p className="text-gray-600 leading-relaxed">
                       {value.description}
                     </p>
                   </div>
@@ -109,7 +100,7 @@ export function Values() {
           </div>
 
           {/* Bottom Stats */}
-          <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t border-gray-200">
             {[
               { number: '100%', label: language === 'ar' ? 'الشفافية' : 'Transparency' },
               { number: '24/7', label: language === 'ar' ? 'الدعم' : 'Support' },
@@ -117,10 +108,10 @@ export function Values() {
               { number: '∞', label: language === 'ar' ? 'الثقة' : 'Trust' }
             ].map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-accent mb-2">
+                <div className="text-3xl md:text-4xl font-bold text-accent mb-2">
                   {stat.number}
                 </div>
-                <p className="text-white/70 font-medium">
+                <p className="text-gray-600 font-medium">
                   {stat.label}
                 </p>
               </div>

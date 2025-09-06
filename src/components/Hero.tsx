@@ -1,6 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, ArrowLeft, Play } from 'lucide-react';
+import { ArrowRight, ArrowLeft } from 'lucide-react';
 import heroAutomotive from '@/assets/hero-automotive.jpg';
 
 export function Hero() {
@@ -27,7 +27,7 @@ export function Hero() {
       <div className="relative z-10 container mx-auto px-4 pt-20">
         <div className="max-w-4xl">
           <div className="space-y-8 text-white">
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight">
               <span className="block">{t('heroTitle').split(' ').slice(0, 2).join(' ')}</span>
               <span className="block text-accent">
                 {t('heroTitle').split(' ').slice(2).join(' ')}
@@ -41,7 +41,7 @@ export function Hero() {
             <div className="flex flex-col sm:flex-row gap-6 pt-8">
               <Button
                 onClick={handleWhatsApp}
-                className="btn-hero text-lg px-12 py-6 group"
+                className="btn-hero text-lg px-8 py-6 group"
                 size="lg"
               >
                 <span>{t('heroCta')}</span>
@@ -50,15 +50,6 @@ export function Hero() {
                 ) : (
                   <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
                 )}
-              </Button>
-              
-              <Button
-                variant="outline"
-                className="border-white/30 text-white hover:bg-white/10 text-lg px-8 py-6"
-                size="lg"
-              >
-                <Play className="mr-3 h-5 w-5" />
-                {language === 'ar' ? 'شاهد الفيديو' : 'Watch Video'}
               </Button>
             </div>
           </div>

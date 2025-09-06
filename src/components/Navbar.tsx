@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Globe } from 'lucide-react';
-import logo from '@/assets/logo.png';
+import logo from '@/assets/logo1.webp';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,16 +30,8 @@ export function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-3 rtl:space-x-reverse">
+          <div className="flex items-center">
             <img src={logo} alt="Al-Sama Logo" className="h-10 md:h-12 w-auto" />
-            <div className="hidden sm:block">
-              <h1 className="text-lg md:text-xl font-bold text-primary leading-tight">
-                {language === 'ar' ? 'مؤسسة سما التوريد' : 'Al-Sama Import'}
-              </h1>
-              <p className="text-xs md:text-sm text-muted-foreground">
-                {language === 'ar' ? 'لخدمات السيارات' : 'Car Import Services'}
-              </p>
-            </div>
           </div>
 
           {/* Desktop Navigation */}
